@@ -224,7 +224,7 @@ data_monthly_filtre=(data_monthly_filtre[data_monthly_filtre['LOB']=='Commercial
 load_dotenv(dotenv_path=".gitignore/.env")
 
 # 🔐 Récupérer la clé API depuis st.secrets ou .env
-api_key = st.secrets.get("API_KEY") or os.getenv("API_KEY")
+api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("API_KEY")
 
 # ✅ Vérification
 if not api_key:
@@ -362,6 +362,7 @@ if question:
        
         except Exception as e:
             st.error(str(e))
+
 
 
 
