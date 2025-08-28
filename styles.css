@@ -1,0 +1,54 @@
+.dashboard-container {
+  background: linear-gradient(135deg, #e0e0e0, #f9f9f9); /* Fond dégradé doux, en diagonale (135°) */
+  padding: 20px 5px;               /* Espace interne (haut/bas 20px, gauche/droite 5px) */
+  border-radius: 10px;             /* Coins arrondis pour un style moderne */
+  border-bottom: 3px solid #c0c0c0;/* Trait en bas pour délimiter la bannière */
+  user-select: none;               /* Empêche de sélectionner le texte (utile pour un titre) */
+  transition: background-color 0.3s ease; /* Transition douce lors du changement de couleur (ex : mode sombre) */
+}
+
+/* Style du titre de la bannière */
+.dashboard-container h2 {
+  font-size: 50px;                      /* Très grande taille pour mettre le titre en avant */
+  text-align: center;                   /* Centré horizontalement */
+  color: #6f6c6c;                        /* Couleur grise, adaptée au fond clair */
+  font-weight: 700;                      /* Texte en gras */
+  letter-spacing: 2px;                   /* Espacement entre les lettres pour un effet "respirant" */
+  text-transform: uppercase;             /* Transforme tout le texte en majuscules */
+  text-shadow: 1px 1px 2px #bbb;         /* Légère ombre portée pour donner de la profondeur */
+  margin: 0;                             /* Supprime la marge par défaut du h2 */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+  transition: color 0.3s ease;           /* Transition douce sur le changement de couleur (hover ou mode sombre) */
+}
+
+/* Effet au survol du titre (si cliquable) */
+.dashboard-container h2:hover {
+  color: #004080;        /* Devient bleu foncé quand on survole */
+  cursor: pointer;       /* Change le curseur en "main" pour indiquer un élément interactif */
+}
+
+/* Thème sombre (activé automatiquement si l'OS du visiteur est en mode sombre) */
+@media (prefers-color-scheme: dark) {
+  .dashboard-container {
+    background-color: #827f7f;           /* Couleur de fond plus sombre */
+    border-bottom-color: #5a5858;        /* Ajuste la bordure pour mieux contraster */
+  }
+  .dashboard-container h2 {
+    color: #242222;                      /* Titre clair pour contraster sur fond sombre */
+    text-shadow: 1px 1px 3px #222;       /* Ombre plus prononcée pour lisibilité */
+  }
+  .dashboard-container h2:hover {
+    color: #b3d4ff;                      /* Changement de couleur au survol en mode sombre */
+  }
+}
+
+/* Ajustements pour écrans plus petits (mobiles, tablettes) */
+@media (max-width: 768px) {
+  .dashboard-container h2 {
+    font-size: 32px;                     /* Réduit la taille du titre pour les petits écrans */
+    letter-spacing: 1px;                 /* Moins d’espacement entre les lettres pour optimiser l’espace */
+  }
+  .dashboard-container {
+    padding: 15px 5px;                   /* Réduit le padding pour que la bannière reste compacte */
+  }
+}
