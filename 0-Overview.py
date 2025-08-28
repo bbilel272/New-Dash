@@ -7,6 +7,7 @@ import plotly.express as px
 import traceback
 from openai import OpenAI
 import re
+from dotenv import load_dotenv
 import os
 
 
@@ -220,7 +221,18 @@ with tab2:
 data_monthly_filtre=(data_monthly_filtre[data_monthly_filtre['LOB']=='Commercial'])
 
 
-client = OpenAI(api_key="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")
+load_dotenv(dotenv_path=".gitignore/.env")
+
+# 🔐 Récupérer la clé API depuis st.secrets ou .env
+api_key = st.secrets.get("API_KEY") or os.getenv("API_KEY")
+
+# ✅ Vérification
+if not api_key:
+    raise ValueError("Clé API introuvable. Vérifie st.secrets ou .env.")
+
+# 🚀 Initialiser le client OpenAI
+client = OpenAI(api_key=api_key)
+
 
 # ==============================
 # 2) Fonction utilitaire : Nettoyage du code IA
@@ -350,6 +362,7 @@ if question:
        
         except Exception as e:
             st.error(str(e))
+
 
 
 
