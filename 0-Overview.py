@@ -29,7 +29,7 @@ st.divider()
 
 #@st.cache_data
 def read_excel_file():
-    return pd.read_excel("data.xlsx")
+    return pd.read_excel("Data.xlsx")
 
 # --- Chargement et stockage dans session_state ---
 def load_data():
@@ -362,4 +362,5 @@ if question:
 
         except Exception as e:
             st.error(str(e))
+
 
