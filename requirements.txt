@@ -5,3 +5,5 @@ altair>=5.0.0
 plotly>=5.20.0         # Inclut plotly.express
 openai>=1.0.0
 python-dateutil        # Pour la gestion des dates
+openpyxl>=3.1.0
+
