@@ -51,6 +51,7 @@ data_filtre['Date'] = data_filtre['Date'].dt.date
 min_date = data_filtre['Date'].min()
 max_date = data_filtre['Date'].max()
 st.sidebar.write('Min Date',min_date)
+st.sidebar.write('Max Date',max_date)
 start_date =st.sidebar.date_input('Start date', min_value=min_date,max_value=max_date,value=max_date - pd.Timedelta(days=30),format='DD-MM-YYYY')
 end_date =st.sidebar.date_input('End date', min_value=min_date,max_value=max_date,format='DD-MM-YYYY')
 
@@ -362,6 +363,7 @@ if question:
        
         except Exception as e:
             st.error(str(e))
+
 
 
 
