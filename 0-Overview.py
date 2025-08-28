@@ -27,7 +27,7 @@ st.html(f"""
 st.divider()
 # Laod Data from excel file
 
-@st.cache_data
+#@st.cache_data
 def read_excel_file():
     return pd.read_excel("data.xlsx")
 
@@ -362,3 +362,4 @@ if question:
 
         except Exception as e:
             st.error(str(e))
+
