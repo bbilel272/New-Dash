@@ -7,11 +7,15 @@ import plotly.express as px
 import traceback
 from openai import OpenAI
 import re
+import os
 
 
 
 st.set_page_config(page_title='Dashboard',layout="wide")
 # Title
+st.write("📁 Répertoire courant :", os.getcwd())
+st.write("📂 Fichiers disponibles :", os.listdir())
+
 with open("styles.css", "r") as css_file:
     css_content = css_file.read()
 
@@ -362,6 +366,7 @@ if question:
 
         except Exception as e:
             st.error(str(e))
+
 
 
 
