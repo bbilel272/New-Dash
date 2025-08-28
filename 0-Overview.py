@@ -341,28 +341,16 @@ if question:
             st.code(ai_code, language="python")
 
             # --- c) Affichage des résultats
-            st.subheader("📊 Data Frame :")
-            
-            for key, val in results.items():
-                st.dataframe(val)
-        #         # Filtrage des variables internes inutiles
-        #         if key.startswith("__") or key in ["df", "pd", "np"]:
-        #             continue
-
-        #         # Affichage adapté selon le type d'objet
-        #         if isinstance(val, pd.DataFrame):
-        #             st.dataframe(val)
-        #         elif hasattr(val, "show"):
-        #             val.show()
-        #         elif "plotly" in str(type(val)):
-        #             st.plotly_chart(val)
-        #         elif "altair" in str(type(val)):
-        #             st.altair_chart(val)
-        #         else:
-        #             st.write(f": {val}")
-
+            st.subheader("📊 Data Frame :")     
+            if "df_filtered" in results:
+             st.subheader("Résultat filtré")
+             st.dataframe(results["df_filtered"])
+            else:
+                st.warning("Aucun DataFrame filtré trouvé dans les résultats.")
+       
         except Exception as e:
             st.error(str(e))
+
 
 
 
