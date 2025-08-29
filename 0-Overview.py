@@ -9,9 +9,6 @@ from openai import OpenAI
 import re
 from dotenv import load_dotenv
 import os
-
-
-
 st.set_page_config(page_title='Dashboard',layout="wide")
 # Title
 with open("styles.css", "r") as css_file:
@@ -343,7 +340,7 @@ df = data_filtre  # DataFrame principal (déjà défini avant)
 question = st.chat_input("Comment puis-je vous aider ? :")
 
 if question:
-    st.title("🤖 Agent IA pour Analyse du DataFrame")
+    st.title("🤖 Agent IA d'annalyse de données")
     with st.spinner("L'agent IA réfléchit..."):
         try:
             # --- a) On interroge l'IA
@@ -363,6 +360,7 @@ if question:
        
         except Exception as e:
             st.error(str(e))
+
 
 
 
